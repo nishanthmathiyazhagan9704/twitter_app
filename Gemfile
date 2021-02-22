@@ -20,6 +20,8 @@ gem "iconv", "~> 1.0.3"
 gem 'twitter', '~> 7.0'
 gem 'tzinfo-data', '~> 1.2021', '>= 1.2021.1'
 gem 'puma',                       '5.0.4'
+gem 'binding_of_caller', '~> 1.0'
+gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'bootsnap','1.4.6', require: false
 
 group :assets do
