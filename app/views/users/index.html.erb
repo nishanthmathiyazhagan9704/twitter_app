@@ -1,5 +1,6 @@
 <div class="d-flex flex-column align-items-center justify-content-center">
   <h1 class="mt-4">Welcome to twitter</h1>
+  <%= link_to "connect to Twitter", user_omniauth_authorize_path(:twitter) %>
 
-  <%= button_to "connect Twitter", "/auth/twitter",method: :post, class: "btn btn-primary" =%>
-  <%= link_to "Connect", "/auth/twitter" %>
+  <%= button_to "connect to Twitter", "/auth/twitter",method: :post, class: "btn btn-primary" =%>
+  <%= link_to "Connect to ", "/auth/twitter" %>

@@ -5,8 +5,8 @@ class SessionsControllerTest < ActionController::TestCase
     result = {}
     result['omniauth.auth'] = {}
     result['omniauth.auth']['credentials'] = {}
-    result['omniauth.auth']['credentials']['token'] = 'abc'
-    result['omniauth.auth']['credentials']['secret'] = '123'
+    result['omniauth.auth']['credentials']['token'] = '837915307016507392-fi5zTvjjo6XhL0YYmbZ8LmjwGR800ut'
+    result['omniauth.auth']['credentials']['secret'] = 'xLi4PMAnnDPK9lG7tgbSSLRSiX2r9DFwgx7BUMLdprVjA'
     request.stubs env: result
     get :create
     assert_equal 'abc', session[:access_token]
@@ -16,13 +16,13 @@ class SessionsControllerTest < ActionController::TestCase
   end
 
   test 'should display profile when authenticated' do
-    session[:access_token] = 'abc'
-    session[:access_token_secret] = '123'
+    session[:access_token] = '837915307016507392-fi5zTvjjo6XhL0YYmbZ8LmjwGR800ut'
+    session[:access_token_secret] = 'xLi4PMAnnDPK9lG7tgbSSLRSiX2r9DFwgx7BUMLdprVjA'
     stub_request(:get, 'https://api.twitter.com/1.1/account/verify_credentials.json').
       with(query: {include_entities: 'true'}).
       to_return(body: File.read(File.expand_path('../../fixtures/user.json', __FILE__)))
     stub_request(:get, 'https://api.twitter.com/1.1/users/show.json').
-      with(query: {screen_name: 'sferik'}).
+      with(query: {screen_name: 'nish'}).
       to_return(body: File.read(File.expand_path('../../fixtures/user.json', __FILE__)))
     get :show
     assert_not_nil assigns :user
