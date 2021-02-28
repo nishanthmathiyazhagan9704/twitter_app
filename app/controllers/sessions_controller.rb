@@ -1,11 +1,20 @@
 class SessionsController < ApplicationController
   def create
-    user = User.from_omniauth(env['omniauth.auth'])
+   user = User.from_omniauth(env['omniauth.auth'])
     credentials = request.env['omniauth.auth']['credentials']
     session[:access_token] = credentials['837915307016507392-fi5zTvjjo6XhL0YYmbZ8LmjwGR800ut']
     session[:access_token_secret] = credentials['xLi4PMAnnDPK9lG7tgbSSLRSiX2r9DFwgx7BUMLdprVjA']
     redirect_to show_path, notice: 'Signed in'
+
+   
   end
+
+  protected
+
+  def auth_hash
+    request.env['omniauth.hash']
+  end
+
 
   def show
     if session['access_token'] && session['access_token_secret']

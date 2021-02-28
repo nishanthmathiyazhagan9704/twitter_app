@@ -18,6 +18,8 @@ gem 'omniauth-rails_csrf_protection', '~> 1.0'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem "iconv", "~> 1.0.3"
 gem 'twitter', '~> 7.0'
+gem 'twitter_oauth', '~> 0.4.94'
+gem 'oauth_twitter', '~> 0.3.0'
 gem 'tzinfo-data', '~> 1.2021', '>= 1.2021.1'
 gem 'puma',                       '5.0.4'
 gem 'binding_of_caller', '~> 1.0'

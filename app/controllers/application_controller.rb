@@ -7,8 +7,8 @@ private
 
   def client
     @client ||= Twitter::REST::Client.new do |config|
-      config.Twitter_key = ['TWITTER_KEY']
-      config.Twitter_secret = ['TWITTER_SECRET']
+      config.consumer_key = ['TWITTER_KEY']
+      config.consumer_secret = ['TWITTER_SECRET']
       config.access_token = session['access_token']
       config.access_token_secret = session['access_token_secret']
     end
